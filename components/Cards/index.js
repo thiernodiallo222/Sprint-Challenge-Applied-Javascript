@@ -17,4 +17,52 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-// Just so I can make a pull request
+
+
+
+// sending the axios get request
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then((response) => {
+    console.log(response);
+    // response.data.articles
+
+}).catch((err) => {
+    
+});
+
+
+// creating component for each article
+
+const createComponent = function (article, i) {
+    const Card = document.createElement('div'),
+        Headline = document.createElement('div'),
+        Author = document.createElement('div'),
+        imageContainer = document.createElement('div'),
+        Image = document.createElement('img'),
+        AuthorsName = document.createElement('span');
+    
+    // setting up structure
+    
+    Card.appendChild(Headline);
+    Card.appendChild(Author);
+    Author.appendChild(imageContainer);
+    imageContainer.appendChild(Image);
+    Author.appendChild(AuthorsName);
+
+    // Adding classes and attributes
+
+    Card.classList.add('card');
+    Headline.classList.add('headline');
+    Author.classList.add('author');
+    Image.src = artcle[i].authorPhoto;
+
+    // creating content
+
+    Headline.textContent = article[i].headline;
+    AuthorsName.textContent = `By ${article[i].authorName}`;
+
+    return Card;
+}
+
+let entry = document.querySelector('cards-container');
