@@ -57,7 +57,7 @@ const createComponent = function (element) {
             Author = document.createElement('div'),
             imageContainer = document.createElement('div'),
             Image = document.createElement('img'),
-            AuthorsName = document.createElement('span');
+            AuthorName = document.createElement('span');
                     
                     // setting up structure
             
@@ -65,7 +65,7 @@ const createComponent = function (element) {
                         Card.appendChild(Author);
                         Author.appendChild(imageContainer);
                         imageContainer.appendChild(Image);
-                        Author.appendChild(AuthorsName);
+                        Card.appendChild(AuthorName);
                     
 
                     // Adding classes and attributes
@@ -79,7 +79,7 @@ const createComponent = function (element) {
     
                     Headline.textContent = element.headline;
                     Image.src = element.authorPhoto;
-                    AuthorsName.textContent = `By ${element.authorName}`;
+                    AuthorName.textContent = `By ${element.authorName}`;
                     
 
                     return Card;
