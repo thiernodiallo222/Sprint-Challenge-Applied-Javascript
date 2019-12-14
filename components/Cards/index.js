@@ -1,3 +1,5 @@
+
+
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
@@ -22,47 +24,87 @@
 
 // sending the axios get request
 
+ 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response) => {
     console.log(response);
-    // response.data.articles
+    response.data.articles.javascript.forEach(element => {
+        root.appendChild(createComponent(element));
+    });
+    response.data.articles.bootstrap.forEach(element => {
+        root.appendChild(createComponent(element));
+    });
+    response.data.articles.technology.forEach(element => {
+        root.appendChild(createComponent(element));
+    });
+    response.data.articles.jquery.forEach(element => {
+        root.appendChild(createComponent(element));
+    });
+    response.data.articles.node.forEach(element => {
+    root.appendChild(createComponent(element));
+                    });
 
 }).catch((err) => {
+console.log("Cannot fetch data !");
+     });
+
+ // creating component for each article
+
+const createComponent = function (element) {
+   
+        const Card = document.createElement('div'),
+            Headline = document.createElement('div'),
+            Author = document.createElement('div'),
+            imageContainer = document.createElement('div'),
+            Image = document.createElement('img'),
+            AuthorsName = document.createElement('span');
+                    
+                    // setting up structure
+            
+                        Card.appendChild(Headline);
+                        Card.appendChild(Author);
+                        Author.appendChild(imageContainer);
+                        imageContainer.appendChild(Image);
+                        Author.appendChild(AuthorsName);
+                    
+
+                    // Adding classes and attributes
+
+                    Card.classList.add('card');
+                    Headline.classList.add('headline');
+                    Author.classList.add('author');
+                   
+
+                    // creating content
     
-});
+                    Headline.textContent = element.headline;
+                    Image.src = element.authorPhoto;
+                    AuthorsName.textContent = `By ${element.authorName}`;
+                    
+
+                    return Card;
+                }
+             let root = document.querySelector('.cards-container');
+                
 
 
-// creating component for each article
+/* let articles = {
 
-const createComponent = function (article, i) {
-    const Card = document.createElement('div'),
-        Headline = document.createElement('div'),
-        Author = document.createElement('div'),
-        imageContainer = document.createElement('div'),
-        Image = document.createElement('img'),
-        AuthorsName = document.createElement('span');
-    
-    // setting up structure
-    
-    Card.appendChild(Headline);
-    Card.appendChild(Author);
-    Author.appendChild(imageContainer);
-    imageContainer.appendChild(Image);
-    Author.appendChild(AuthorsName);
 
-    // Adding classes and attributes
+    javascript = [{headline: sdfgh},
+                 {authorPhoto: dfghj},
+                 {authorsName: dfghj},
 
-    Card.classList.add('card');
-    Headline.classList.add('headline');
-    Author.classList.add('author');
-    Image.src = artcle[i].authorPhoto;
+                 {.............},
+                 {..............},
+                 {..............}
+                ]
 
-    // creating content
 
-    Headline.textContent = article[i].headline;
-    AuthorsName.textContent = `By ${article[i].authorName}`;
 
-    return Card;
-}
+bootstrap: 
+technology:
+jquery:
+node:   
 
-let entry = document.querySelector('cards-container');
+}*/
