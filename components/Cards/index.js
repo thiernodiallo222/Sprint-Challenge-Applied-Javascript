@@ -65,7 +65,7 @@ const createComponent = function (element) {
                         Card.appendChild(Author);
                         Author.appendChild(imageContainer);
                         imageContainer.appendChild(Image);
-                        Card.appendChild(AuthorName);
+                        Author.appendChild(AuthorName);
                     
 
                     // Adding classes and attributes
@@ -73,6 +73,7 @@ const createComponent = function (element) {
                     Card.classList.add('card');
                     Headline.classList.add('headline');
                     Author.classList.add('author');
+                   imageContainer.classList.add('img-container');
                    
 
                     // creating content
