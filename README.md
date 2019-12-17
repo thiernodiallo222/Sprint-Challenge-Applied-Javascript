@@ -8,7 +8,7 @@ This challenge allows you to practice the concepts and techniques learned over t
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your Tead Lead and Instructor in your cohort help channel on Slack. Your work reflects your proficiency in Applied JavaScript.
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your Team Lead and Instructor in your cohort help channel on Slack. Your work reflects your proficiency in Applied JavaScript.
 
 You have three hours to complete this challenge. Plan your time accordingly.
 
@@ -30,14 +30,19 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for 'Document Object Model'. It is an api or an interface between web pages.
+
 2. What is an event?
 
-3. What is an event listener?
+An event is an action that may be initiated by either the browser or the user. Example, a page load, a click and an error are all events.
 
+3. What is an event listener?
+An event listener is a function that waits for an event to occur to respond to the event occurence following what is is programmed for.
 4. Why would we convert a NodeList into an Array?
+We convert a node list into an array in order to be able to navigate through it and access its elements in order to do something with them.
 
 5. What is a component?
-
+A component is a function creates one or more html elements that have the same goal of displaying something meaningfull in the browser.
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
